@@ -1,7 +1,7 @@
-"# myblog_backend"  
-"## ÏîÄ¿ÃèÊö"  
-"Õâ¸öÏîÄ¿ÊÇÒ»¸ö²©¿Íºó¶Ë£¬Ê¹ÓÃ Express ºÍ MySQL ¹¹½¨¡£"  
-"## Ê¹ÓÃ·½·¨"  
-"1. ¿ËÂ¡ÏîÄ¿£ºgit clone git@github.com:Kohaku233/blog_backend.git"  
-"2. °²×°ÒÀÀµ£ºnpm install"  
-"3. Æô¶¯·şÎñÆ÷£ºnode index.js"  
+# é¡¹ç›®æè¿°
+è¿™ä¸ªé¡¹ç›®æ˜¯ä¸€ä¸ªåšå®¢åç«¯ï¼Œä½¿ç”¨ Express å’Œ MySQL æ„å»ºã€‚
+
+# ä½¿ç”¨æ–¹æ³•
+1. å…‹éš†é¡¹ç›®ï¼š`git clone git@github.com:Kohaku233/blog_backend.git`
+2. å®‰è£…ä¾èµ–ï¼š`npm install`
+3. å¯åŠ¨æœåŠ¡å™¨ï¼š`node index.js`
