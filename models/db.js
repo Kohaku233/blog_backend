@@ -1,11 +1,12 @@
+require("dotenv").config();
 const mysql = require("mysql");
 
 // 配置 MySQL 连接
 const db = mysql.createConnection({
-  host: "database-1.chw4aiimkpj7.ap-southeast-1.rds.amazonaws.com", // 替换为你的 RDS 实例的终端节点
-  user: "admin", // 替换为你的 RDS 用户名
-  password: "zzb562496", // 替换为你的 RDS 密码
-  database: "blog_db", // 你的数据库名称
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 });
 
 // 连接到数据库
