@@ -10,7 +10,8 @@ exports.createBlog = (req, res) => {
       console.error('Error creating blog:', err);
       return res.status(500).json({ error: 'Internal Server Error' });
     }
-    res.json({ message: 'Blog created', blogId: result.insertId });
+    console.log(`Blog created: ${title} (ID: ${result.insertId})`); // 添加控制台信息
+    res.json({ message: 'Blog created successfully', blogId: result.insertId });
   });
 };
 
@@ -22,7 +23,8 @@ exports.getAllBlogs = (req, res) => {
       console.error('Error fetching blogs:', err);
       return res.status(500).json({ error: 'Internal Server Error' });
     }
-    res.json(results);
+    console.log(`Fetched ${results.length} blogs`); // 添加控制台信息
+    res.json({ message: 'Blogs fetched successfully', data: results });
   });
 };
 
@@ -35,8 +37,10 @@ exports.getBlogById = (req, res) => {
       return res.status(500).json({ error: 'Internal Server Error' });
     }
     if (result.length > 0) {
-      res.json(result[0]);
+      console.log(`Fetched blog ID: ${req.params.id}`); // 添加控制台信息
+      res.json({ message: 'Blog fetched successfully', data: result[0] });
     } else {
+      console.log(`Blog not found: ID ${req.params.id}`); // 添加控制台信息
       res.status(404).json({ message: 'Blog not found' });
     }
   });
@@ -52,8 +56,10 @@ exports.updateBlog = (req, res) => {
       return res.status(500).json({ error: 'Internal Server Error' });
     }
     if (result.affectedRows > 0) {
-      res.json({ message: 'Blog updated' });
+      console.log(`Blog updated: ID ${req.params.id}`); // 添加控制台信息
+      res.json({ message: 'Blog updated successfully' });
     } else {
+      console.log(`Blog not found for update: ID ${req.params.id}`); // 添加控制台信息
       res.status(404).json({ message: 'Blog not found' });
     }
   });
@@ -68,8 +74,10 @@ exports.deleteBlog = (req, res) => {
       return res.status(500).json({ error: 'Internal Server Error' });
     }
     if (result.affectedRows > 0) {
-      res.json({ message: 'Blog deleted' });
+      console.log(`Blog deleted: ID ${req.params.id}`); // 添加控制台信息
+      res.json({ message: 'Blog deleted successfully' });
     } else {
+      console.log(`Blog not found for deletion: ID ${req.params.id}`); // 添加控制台信息
       res.status(404).json({ message: 'Blog not found' });
     }
   });
