@@ -18,4 +18,16 @@ db.connect((err) => {
   console.log("Connected to MySQL Database.");
 });
 
+process.on('SIGINT', () => {
+  console.log('Received SIGINT. Closing database connection...');
+  db.end((err) => {
+    if (err) {
+      console.error('Error closing database connection:', err);
+    } else {
+      console.log('Database connection closed.');
+    }
+    process.exit();
+  });
+});
+
 module.exports = db;
